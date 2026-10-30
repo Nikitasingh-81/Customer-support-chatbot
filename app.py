@@ -6,6 +6,19 @@ import streamlit as st
 import tensorflow as tf
 
 BASE_DIR = Path(__file__).resolve().parent
+import os
+
+st.write("Current directory:", os.getcwd())
+st.write("Project directory:", BASE_DIR)
+st.write("Models folder exists:", (BASE_DIR / "models").exists())
+
+if (BASE_DIR / "models").exists():
+    st.write("Model files:", os.listdir(BASE_DIR / "models"))
+
+st.write(
+    "Model file exists:",
+    (BASE_DIR / "models" / "customer_support_intent_model.keras").is_file()
+)
 MODEL_PATH = BASE_DIR / "models" / "customer_support_intent_model.keras"
 METADATA_PATH = BASE_DIR / "models" / "customer_support_metadata.json"
 
