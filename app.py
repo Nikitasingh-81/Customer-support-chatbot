@@ -1,3 +1,4 @@
+import zipfile
 import json
 from pathlib import Path
 
@@ -40,7 +41,14 @@ def load_artifacts():
     if missing_keys:
         raise ValueError(f"Metadata is missing keys: {sorted(missing_keys)}")
     return model, metadata
+st.subheader("Model File Verification")
 
+st.write("Model path:", MODEL_PATH)
+st.write("File exists:", MODEL_PATH.is_file())
+
+if MODEL_PATH.is_file():
+    st.write("File size (MB):", round(MODEL_PATH.stat().st_size / (1024 * 1024), 2))
+    st.write("Valid Keras ZIP:", zipfile.is_zipfile(MODEL_PATH))
 try:
     model, metadata = load_artifacts()
 except Exception as exc:
