@@ -1,0 +1,7 @@
+1. Open notebooks/Customer_Support_Chatbot_Colab.ipynb in Google Colab.
+2. Run cells in order and upload the three CSV files from data/ when prompted.
+3. The notebook saves the model and metadata under /content/models/.
+4. Download both files and upload them to the GitHub repository's models/ folder.
+5. Reboot Streamlit Community Cloud.
+
+For a complete reproducible local training run, use: python train_model.py
