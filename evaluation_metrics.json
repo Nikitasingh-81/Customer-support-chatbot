@@ -1,0 +1,9 @@
+{
+  "test_accuracy": 0.9853300452232361,
+  "test_loss": 0.03762948885560036,
+  "training_rows": 6539,
+  "validation_rows": 818,
+  "testing_rows": 818,
+  "number_of_intents": 27,
+  "epochs_completed": 20
+}
